@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-
-# -*- coding: utf-8 -*-
 class PapersController < ApplicationController
   # GET /papers
   # GET /papers.json

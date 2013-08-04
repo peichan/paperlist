@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 
 # -*- coding: utf-8 -*-
 class PapersController < ApplicationController
@@ -98,8 +99,15 @@ class PapersController < ApplicationController
   end
 
   def add_mylist
-    Mylist.create(:account => params[:account], :title => params[:title])
-    @msg = params[:title]
+    @mylist = Mylist.new(params[:data])
+
+    unless @mylist.save
+        @head = "登録失敗"
+        @msg = "登録が失敗しました。すでにマイリストに登録されています。"
+    else
+        @head = "登録完了"
+        @msg = params[:data][:title] + "はマイリストに登録されました。"
+    end
   end
 
   def mylist
@@ -109,5 +117,13 @@ class PapersController < ApplicationController
         titles.append(t.title)
     end
     @papers = Paper.find(:all, :conditions => ["title in (?)", titles], :order => "created_at desc")
+  end
+
+  def remove_from_mylist
+    @mylist = Mylist.find(:first, :conditions => { :account => params[:account], :title => params[:title]})
+    @mylist.destroy
+    @head = "削除完了"
+    @msg = params[:title] + "をマイリストから削除しました"
+    render "add_mylist"
   end
 end
