@@ -1,0 +1,16 @@
+# -*- coding: utf-8 -*-
+class RegisterController < ApplicationController
+
+  def new
+    @user = User.new
+    @emsg = ""
+  end
+
+  def done
+    @user = User.new(params[:user])
+    unless @user.save
+      @emsg = "アカウントが作成できませんでした"
+      render :action => 'new'
+    end
+  end
+end

@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+
+<table>
+<tr>
+  <td>タイトル:</td>
+  <td><%= @paper.title %></td>
+</tr>
+
+<tr>
+  <td>著者:</td>
+  <td><%= @paper.author %></td>
+</tr>
+
+<tr>
+  <td>URl:</td>
+  <td><%= @paper.url %></td>
+</tr>
+
+<tr>
+  <td>開始ページ:</td>
+  <td><%= @paper.startingPage %></td>
+</tr>
+
+<tr>
+  <td>終了ページ:</td>
+  <td><%= @paper.endingPage %></td>
+</tr>
+
+<tr>
+  <td>出版年:</td>
+  <td><%= @paper.publicationYear %></td>
+</tr>
+
+<tr>
+  <td>刊行物名:</td>
+  <td><%= @paper.publicationName %></td>
+</tr>
+
+</table>
+
+<br>
+<%= link_to 'この論文を読む', @paper.url, :target => "_blank" %>
+<br>
+
+<%= link_to_function("bibtexを表示", "show_bibtex(0);") %>
+<br>
+
+<div id="bibtex", style="display:none;background-color:white;">
+<%= "@inproceedings{" + (("a".."z").to_a + ("A".."Z").to_a + (0..9).to_a).shuffle[0..5].join + "," %></br>
+<%= "author = {" + @paper.author + "}," %></br>
+<%= "title = {" + @paper.title + "}," %></br>
+<%= "booktitle = {" + @paper.publicationName + "}," %></br>
+<%= "year = {" + @paper.publicationYear + "}," %></br>
+}</br>
+</div>
+
+<%= link_to 'マイリストに追加', :controller => "papers", :action => "add_mylist", :data => {:account => session[:user_name], :title => @paper.title} %>
+<br>
+
+<%= link_to '編集', edit_paper_path(@paper) %> |
+<%= link_to '戻る', :back %>

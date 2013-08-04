@@ -1,0 +1,127 @@
+
+---
+users:
+  columns:
+  - id
+  - account
+  - password_digest
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - admin
+    - $2a$10$TjseIZzmH1QSH73Isgmm9u7Kx5zBgKz..EqdC0yOMvSmEx65eCP6y
+    - '2013-07-04 05:10:33.182457'
+    - '2013-07-04 05:10:33.182457'
+  - - 9
+    - kitaguchi
+    - $2a$10$e5DZ7wx7HPV8N/C8OBSJc.8PtE9JnoUa.HR0.zWgR7jFXhEaejOnS
+    - '2013-07-15 14:20:43.224372'
+    - '2013-07-15 14:20:43.224372'
+  - - 10
+    - test
+    - $2a$10$oHYD0D.PBwQOU.nQVoXadODBwcpvKn4UMiacJwwEE31YimScCrpVy
+    - '2013-07-18 08:20:26.577132'
+    - '2013-07-18 08:20:26.577132'
+
+---
+books:
+  columns:
+  - id
+  - name
+  - category
+  - price
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - Java
+    - 1
+    - 3000
+    - '2013-07-04 08:52:23.473196'
+    - '2013-07-04 08:52:23.473196'
+  - - 2
+    - Python
+    - 2
+    - 6000
+    - '2013-07-04 08:52:46.845107'
+    - '2013-07-04 08:52:46.845107'
+
+---
+mylists:
+  columns:
+  - id
+  - account
+  - title
+  - created_at
+  - updated_at
+  records: 
+  - - 6
+    - admin
+    - Heterogeneous web data search using relevance-based on the fly data integration
+    - '2013-07-16 06:34:59.144444'
+    - '2013-07-16 06:34:59.144444'
+  - - 7
+    - admin
+    - Personalizing Web Search Results by Reading Level
+    - '2013-07-16 06:38:26.984413'
+    - '2013-07-16 06:38:26.984413'
+  - - 18
+    - kitaguchi
+    - Heterogeneous web data search using relevance-based on the fly data integration
+    - '2013-07-20 08:39:54.186160'
+    - '2013-07-20 08:39:54.186160'
+  - - 19
+    - kitaguchi
+    - ! 'Personalizing information retrieval for multi-session tasks: the roles of
+      task stage and task type'
+    - '2013-07-20 08:41:55.022565'
+    - '2013-07-20 08:41:55.022565'
+
+---
+papers:
+  columns:
+  - id
+  - title
+  - author
+  - url
+  - startingPage
+  - endingPage
+  - publicationName
+  - created_at
+  - updated_at
+  - publicationYear
+  records: 
+  - - 4
+    - Personalizing Web Search Results by Reading Level
+    - Collins-Thompson, Kevyn and Bennett, Paul N. and White, Ryen W. and de la Chica,
+      Sebastian and Sontag, David
+    - http://dl.acm.org/citation.cfm?id=2063639
+    - 403
+    - 412
+    - CIKM
+    - '2013-07-11 06:26:54.142744'
+    - '2013-07-17 07:53:56.076031'
+    - '2011'
+  - - 5
+    - Heterogeneous web data search using relevance-based on the fly data integration
+    - Herzig, Daniel M. and Tran, Thanh
+    - http://doi.acm.org/10.1145/2187836.2187856
+    - 141
+    - 150
+    - Proceedings of the 21st international conference on World Wide Web
+    - '2013-07-16 05:10:46.525297'
+    - '2013-07-16 05:44:07.162748'
+    - '2012'
+  - - 6
+    - ! 'Personalizing information retrieval for multi-session tasks: the roles of
+      task stage and task type'
+    - Liu, Jingjing and Belkin, Nicholas J.
+    - http://doi.acm.org/10.1145/1835449.1835457
+    - 26
+    - 33
+    - Proceedings of the 33rd international ACM SIGIR conference on Research and development
+      in information retrieval
+    - '2013-07-17 07:53:08.546026'
+    - '2013-07-17 07:53:08.546026'
+    - '2010'

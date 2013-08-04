@@ -1,0 +1,20 @@
+<h1>’¥í’¥°’¥¤’¥ó’²è’ÌÌ</h1>
+
+<%= form_tag sessions_path do %>
+<table id="login_form">
+    <tr>
+    <td><%= label_tag :account, '’¥¢’¥«’¥¦’¥ó’¥È’Ì¾' %></td>
+    <td><%= text_field_tag :name, params[:account] %></td>
+</tr>
+
+<tr>
+    <td><%= label_tag :pass, '’¥Ñ’¥¹’¥ï’¡¼’¥É' %></td>
+    <td><%= password_field_tag :pass, params[:pass] %></td>
+</tr>
+
+<tr>
+    <td><%= submit_tag "’¥í’¥°’¥¤’¥ó" %></td>
+</tr>
+</table>
+
+<% end %>

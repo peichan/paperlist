@@ -1,0 +1,22 @@
+<html>
+<head>
+	<title>Tasks</title>
+	<%= stylesheet_link_tag "style" %>
+</head>
+<body>
+
+  <!-- ログインフォーム -->
+  <div class="login">
+    <% if session[user_id] %>
+      <%= render :partial => 'login/new' %>
+    <% else %>
+      <%= render :partial => 'login/login_success' %>
+    <% end %>
+  </div>
+
+  <!-- コンテンツを表示 --> 
+  <div class="contents">
+    <%= yield :layout %>
+  </div>
+
+</body>

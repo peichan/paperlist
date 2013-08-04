@@ -1,0 +1,37 @@
+<h1>アカウントの新規登録</h1>
+
+<!-- エラーメッセージ -->
+<div class="errors">
+<% keys = [:account, :password, :password_confirmation] %>
+<% @user.errors.each do |attr,msg| %>
+  <% if keys.include?(attr) && msg != "doesn't match confirmation" %>
+    <%= User.real_attribute_name(attr) %><%= msg %><br>
+  <% end %>
+<% end %>
+</div>
+
+<!-- 入力フォーム -->
+<table>
+<%= form_for :user, :url => {:action => 'done'} do |f| %>
+  <tr>
+    <td>ユーザー名</td>
+    <td><%= f.text_field :account %></td>
+    <td>(15文字以下)</td>
+  </tr>
+  <tr>
+    <td>パスワード</td>
+    <td><%= f.password_field :password %></td>
+    <td>(4文字以上12文字以下)
+  </tr>
+  <tr>
+    <td/>
+    <td><%= f.password_field :password_confirmation %></td>
+    <td>(確認用)</td>
+  </tr>
+</table>
+  <div>
+    <%= submit_tag '登録' %>
+  </div>
+<% end %>
+
+<%= link_to 'ログイン画面に戻る', :controller => "sessions", :aciont => "new" %>

@@ -1,0 +1,25 @@
+<h1>マイリスト</h1>
+
+<% if @papers.length == 0 %>
+  <p>マイリストに論文が登録されていません</p>
+  <%= @titles %>
+<% else %>
+
+  <p>全<%= @papers.length %>件</p>
+
+  <table class="list">
+    <tr>
+      <th>タイトル</th>
+      <th>著者</th>
+      <th></th>
+    </tr>
+
+    <% @papers.each do |paper| %>
+      <tr>
+	<td><%= link_to paper.title, paper %></td>
+	<td><%= paper.author %></td>
+	<td width = 80px><%= link_to 'マイリストから削除', :action => "remove_from_mylist", :confirm => "本当に削除しますか?", :account => session[:user_name], :title => paper.title %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>

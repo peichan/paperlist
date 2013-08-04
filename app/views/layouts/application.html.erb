@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Papers</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<!-- タイトル -->
+<div class="title">
+  <% if session[:user_id] %>
+    <h2><%= link_to "論文データベース", :controller => "papers", :action => "index" %></h2>
+  <% else %>
+    <h2><%= link_to "論文データベース", :controller => "sessions", :action => "new" %></h2>
+  <% end %>
+</div>
+
+<div class="nav">
+<% if not ["sessions","register"].include?(params[:controller]) %>
+  <ul>
+    <li><%= link_to "論文リスト", :controller => "papers", :action => "index" %></li>
+    <li><%= link_to "マイリスト", :controller => "papers", :action => "mylist" %></li>
+    <li><%= link_to "ログアウト", session_path(session[:user_id]), :confirm => 'ログアウトしますか？', :method => :delete %></li>
+  </ul>
+  <% if session[:user_id] %>
+    <p>ようこそ <%= session[:user_name] -%> さん　</p>
+  <% end %>
+<% end %>
+</div>
+
+<!-- コンテントの表示 -->
+<div class="content">
+  <%= yield %>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+<h1>ブックリスト</h1>
+<p>ようこそ<%= session[:user_name] %>さん</p>
+<table border=2>
+  <tr>
+    <th>商品名</th>
+    <th>カテゴリ</th>
+    <th>値段</th>
+  </tr>
+<% @booklist.each do |book| %>
+  <tr>
+    <td><%= book.name %></td>
+    <td><%= book.category %></td>
+    <td><%= book.price %></td>
+  </tr>
+<% end %>
+</table>
+

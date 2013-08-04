@@ -1,0 +1,46 @@
+<!-- クエリが入力されていたら検索結果へ、なければ論文リストへ -->
+<h1>
+<% if @query == "" %>
+論文リスト
+<% else %>
+検索結果
+<% end %>
+</h1>
+
+<%= link_to '新しい論文を登録', new_paper_path %>
+<br>
+
+<!-- 検索フォーム -->
+<table>
+<%= form_tag :action=>"search" do %>
+    <td><%= select_tag 'options[id]', options_for_select([["タイトルで検索", "1"], ["著者名で検索", "2"]]), :style => "font-size:21px" %></td>
+    <td><%= text_field_tag :query, @query, :style => "height:21px;font-size:15px", :size => 40 %></td>
+    <td><%= image_submit_tag("/assets/search.png") %></td>
+<% end %>
+</table>
+
+<!-- 論文が1件も登録されていなければtableを表示しない -->
+<% if @papers.length == 0 %>
+  <p>該当なし</p>
+<% else %>
+
+  <p>全<%= @papers.length %>件</p>
+
+  <table class="list">
+    <tr>
+      <th>タイトル</th>
+      <th>著者</th>
+      <th></th>
+      <th></th>
+    </tr>
+
+    <% @papers.each do |paper| %>
+      <tr>
+	<td><%= link_to paper.title, paper %></td>
+	<td><%= paper.author %></td>
+	<td width=40px><%= link_to '編集', edit_paper_path(paper) %></td>
+	<td width=40px><%= link_to '削除', paper, :method => :delete, :data => { :confirm => '本当に削除しますか?' } %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>

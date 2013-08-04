@@ -1,0 +1,22 @@
+<h1>ログイン画面</h1>
+
+<%= form_tag sessions_path do %>
+<table id="login_form">
+    <tr>
+    <td><%= label_tag :account, "アカウント名" %></td>
+    <td><%= text_field_tag :name, params[:account] %></td>
+</tr>
+
+<tr>
+    <td><%= label_tag :pass, "パスワード" %></td>
+    <td><%= password_field_tag :pass, params[:pass] %></td>
+</tr>
+
+<tr>
+    <td><%= submit_tag "ログイン" %></td>
+</tr>
+</table>
+
+<%= link_to '新規登録', :controller => 'register', :action => 'new' %>
+
+<% end %>

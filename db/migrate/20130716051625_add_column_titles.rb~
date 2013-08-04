@@ -1,0 +1,11 @@
+class AddColumnTitles < ActiveRecord::Migration
+  def up
+    add_column :papers, :publicationYear, :string
+    remove_column :papers, :publicationDate, :datetime
+  end
+
+  def down
+    remove_column :papers, :publicationYear, :string
+    add_column :papers, :publicationDate, :string
+  end
+end
