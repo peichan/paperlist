@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '1.8.7'
+ruby '1.9.3'
 gem 'rails', '3.2.13'
 
 # Bundle edge Rails instead:
@@ -52,4 +52,4 @@ gem 'yaml_db', '0.2.3'
 
 gem 'therubyracer'
 
-gem 'rdoc-data'
+# gem 'rdoc-data'
