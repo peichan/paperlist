@@ -49,3 +49,5 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 # gem 'ruby-debug'
 
 gem 'yaml_db', '0.2.3'
+
+gem 'therubyracer'
