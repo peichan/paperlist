@@ -111,7 +111,7 @@ class PapersController < ApplicationController
   def mylist
     @titles = Mylist.find(:all, :select => "title", :conditions => { :account => session[:user_name]})
     titles = []
-    for t in @titles:
+    for t in @titles do
         titles.append(t.title)
     end
     @papers = Paper.find(:all, :conditions => ["title in (?)", titles], :order => "created_at desc")
