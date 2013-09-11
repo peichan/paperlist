@@ -39,7 +39,7 @@
 </table>
 
 <br>
-<%= link_to 'この論文を読む', @paper.url %>
+<%= link_to 'この論文を読む', @paper.url, :target => "_blank" %>
 <br>
 
 <%= link_to_function("bibtexを表示", "show_bibtex(0);") %>
