@@ -124,4 +124,16 @@ class PapersController < ApplicationController
     @msg = params[:title] + "をマイリストから削除しました"
     render "add_mylist"
   end
+
+  def add_comment
+    @message = ""
+    @mylist = Mylist.find(:first, :conditions => { :account => params[:account], :title => params[:title]})
+  end
+
+  def post_comment
+    @mylist = Mylist.find(:first, :conditions => { :account => params[:account], :title => params[:title]})
+    @mylist.update_attribute(:comment, params[:comment])
+    @message = "登録は正常に行われました"
+    render "add_comment"
+  end
 end

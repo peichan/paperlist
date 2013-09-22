@@ -5,6 +5,7 @@ Login::Application.routes.draw do
   get "papers/add_mylist"
   get "papers/mylist"
   get "papers/remove_from_mylist"
+  get "papers/add_comment"
 
   resources :papers do
 
@@ -83,5 +84,7 @@ Login::Application.routes.draw do
 
    resources :sessions
   end
+
+  root :to => 'sessions#new'
 
 end

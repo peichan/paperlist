@@ -13,12 +13,14 @@
       <th>タイトル</th>
       <th>著者</th>
       <th></th>
+      <th></th>
     </tr>
 
     <% @papers.each do |paper| %>
       <tr>
 	<td><%= link_to paper.title, paper %></td>
 	<td><%= paper.author %></td>
+	<td width = 80px><%= link_to 'コメントを登録', {:action => "add_comment", :account => session[:user_name], :title => paper.title} %></td>
 	<td width = 80px><%= link_to 'マイリストから削除', {:action => "remove_from_mylist", :account => session[:user_name], :title => paper.title}, { :confirm => "本当に削除しますか?" } %></td>
       </tr>
     <% end %>

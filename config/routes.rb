@@ -5,6 +5,8 @@ Login::Application.routes.draw do
   get "papers/add_mylist"
   get "papers/mylist"
   get "papers/remove_from_mylist"
+  get "papers/add_comment"
+  post "papers/post_comment"
 
   resources :papers do
 

@@ -1,0 +1,12 @@
+<h1>コメントの登録</h1>
+
+<font color="green"><%= @message %></font>
+<%= @mylist.title %>へのコメント
+
+<%= form_tag ({:action => "post_comment",:account => @mylist.account, :title => @mylist.title}) do %>
+<%= text_area_tag("comment", @mylist.comment,:rows=>20, :cols=>70, :style=>"font-size:15px" ) %><br>
+<%= submit_tag "登録" %>
+<% end %>
+
+<br><br>
+<%= link_to '戻る', :back %>

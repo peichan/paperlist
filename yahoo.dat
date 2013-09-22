@@ -1,0 +1,24 @@
+[ JPRS database provides information on network administration. Its use is    ]
+[ restricted to network administration purposes. For further information,     ]
+[ use 'whois -h whois.jprs.jp help'. To suppress Japanese output, add'/e'     ]
+[ at the end of command, e.g. 'whois -h whois.jprs.jp xxx/e'.                 ]
+
+Domain Information: [ドメイン情報]
+a. [ドメイン名]                 YAHOO.CO.JP
+e. [そしきめい]                 やふーかぶしきがいしゃ
+f. [組織名]                     ヤフー株式会社
+g. [Organization]               Yahoo Japan Corporation
+k. [組織種別]                   株式会社
+l. [Organization Type]          Corporation
+m. [登録担当者]                 SI7100JP
+n. [技術連絡担当者]             NM5078JP
+p. [ネームサーバ]               ns01.yahoo.co.jp
+p. [ネームサーバ]               ns02.yahoo.co.jp
+p. [ネームサーバ]               ns11.yahoo.co.jp
+p. [ネームサーバ]               ns12.yahoo.co.jp
+s. [署名鍵]
+[状態]                          Connected (2013/11/30)
+[登録年月日]                    2000/11/17
+[接続年月日]                    2000/11/17
+[最終更新]                      2012/12/01 01:07:30 (JST)
+
