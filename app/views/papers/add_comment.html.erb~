@@ -1,6 +1,6 @@
 <h1>コメントの登録</h1>
 
-<font color="green"><%= @message %></font>
+<font color="green"><%= @message %></font><br>
 <%= @mylist.title %>へのコメント
 
 <%= form_tag ({:action => "post_comment",:account => @mylist.account, :title => @mylist.title}) do %>
@@ -9,4 +9,4 @@
 <% end %>
 
 <br><br>
-<%= link_to '戻る', :back %>
+<%= link_to '戻る', :action => "mylist" %>
