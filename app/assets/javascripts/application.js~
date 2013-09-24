@@ -13,3 +13,21 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+//ヘッダーを固定
+$(document).ready(function(){
+	menuTopMargin = 0;
+	$("#title").css({
+		position: "fixed",
+		top: menuTopMargin
+	 });
+});
+
+//クリックによりbibtexの表示・非表示を切り替える
+function show_bibtex(count) {
+    if(document.getElementById("bibtex").style.display == "none"){
+	document.getElementById("bibtex").style.display = "block";
+    }else{
+    	document.getElementById("bibtex").style.display = "none";
+    }
+}
