@@ -128,11 +128,13 @@ class PapersController < ApplicationController
   def add_comment
     @message = ""
     @mylist = Mylist.find(:first, :conditions => { :account => params[:account], :title => params[:title]})
+    @comment = Redcarpet.new(@mylist.comment).to_html.html_safe()
   end
 
   def post_comment
     @mylist = Mylist.find(:first, :conditions => { :account => params[:account], :title => params[:title]})
     @mylist.update_attribute(:comment, params[:comment])
+    @comment = @mylist.comment
     @message = "登録は正常に行われました"
     render "add_comment"
   end

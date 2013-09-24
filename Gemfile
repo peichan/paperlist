@@ -53,3 +53,5 @@ gem 'yaml_db', '0.2.3'
 gem 'therubyracer'
 
 # gem 'rdoc-data'
+
+gem 'redcarpet', '~>1.17.2'
