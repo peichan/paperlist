@@ -5,7 +5,8 @@
 table.list {
       border: #2D0F09 1px solid;
       border-collapse: collapse;
-      width: 100%;	
+      width: 90%;
+      align: center;
 } 
 table.list th {
       border: #A84673 1px dashed;
@@ -18,7 +19,7 @@ table.list th {
 
 table.list td {
      border: #A84673 1px dashed;
-     background-color: #333333;
+     background-color: #FFFFFF;
      vertical-align: top;
      text-align: left;
      padding: 10px;
