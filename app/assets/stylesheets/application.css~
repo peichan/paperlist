@@ -1,3 +1,4 @@
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -18,20 +19,26 @@ html,body {
 }
 
 div.title{
+	position:fixed;
+	top:0px;
 	height:50px;
+	width:100%;
 	background-color:#000000;
 	margin:0;
 }
 
 div.title a{
 	  color:#FFFFFF;
-          text-decoration:none;	  
+          text-decoration:none;
 }
+
 
 div.title h2{
 	  position:relative;
 	  top:5px;
 	  left:5px;
+	  padding:0;
+	  margin:0;
 }
 
 div.login {
@@ -52,6 +59,8 @@ div.content {
 	    float:left;
 	    width:100%;
 	    /*height:100%;*/
+	    position:fixed;
+	    top:80px;
 	    background-color:#FFFFAA;
 }
 
@@ -63,7 +72,8 @@ div.nav {
 	background-color:#000000;
 	width:100%;
 	height:30px;
-	position:relative;
+	position:fixed;
+	top:50px;
 	border-bottom:1px solid #33CCFF;
 }
 

@@ -16,18 +16,6 @@
   <% end %>
 </div>
 
-<!-- ログインフォーム -->
-<!--
-<div class="login">
-  <% if session[:user_id] %>
-    <p>
-      ようこそ<%= session[:user_name] -%>さん|
-      <%= link_to 'ログアウト', session_path(session[:user_id]), :confirm => 'ログアウトしますか？', :method => :delete %>
-    </p>
-  <% end %>
-</div>
--->
-
 <div class="nav">
 <% if not ["sessions","register"].include?(params[:controller]) %>
   <ul>
@@ -41,20 +29,10 @@
 <% end %>
 </div>
 
-<!-- メニューバーの表示 -->
-<!--
-<div class="menu">
-  <% if not ["sessions","register"].include?(params[:controller]) %>
-    <h2>メニュー</h2>
-    <%= link_to '論文リスト', :controller => 'papers', :action => 'index' %><br>
-    <%= link_to 'マイリスト', :controller => 'papers', :action => 'mylist' %><br>
-    <p>Ciniiで検索</p>
-  <% end %>
-</div>
--->
-
 <!-- コンテントの表示 -->
 <div class="content">
+  <!-- ヘッダーで隠れる部分 -->
+  <br><br><br><br><br>
   <%= yield %>
 </div>
 
