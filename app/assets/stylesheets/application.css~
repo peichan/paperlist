@@ -17,6 +17,7 @@ html,body {
 	  margin:0;
 	 /* height:100%; */
      	  min-width: 700px;
+	  background-color:#FFFFAA;
 }
 
 div.title{
@@ -57,11 +58,11 @@ div.menu {
 }
 
 div.content {
-	    float:center;
-	    width:100%;
+	    float:left;
+	    width:90%;
 	    /*height:100%;*/
-	    margin:10px;
-	    background-color:#FFFFAA;
+	    margin-left: auto;
+	    margin-right: auto;
 }
 
 div.errors {
