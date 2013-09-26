@@ -63,7 +63,9 @@
 <div id="comments">
   <% @comments.each do |comment| %>
     <% if not comment.comment.nil? %>
-      <%= Redcarpet.new(comment.comment).to_html.html_safe() %>
-      <% end %>
+      <div style="background-color: #CCCCFF">
+        <%= Redcarpet.new(comment.comment).to_html.html_safe() %>
+      </div>
+    <% end %>
   <% end %>
 </div>
