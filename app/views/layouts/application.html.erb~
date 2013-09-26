@@ -32,7 +32,7 @@
 <!-- コンテントの表示 -->
 <div class="content">
   <!-- ヘッダーで隠れる部分 -->
-  <br><br><br><br><br>
+  <br><br><br>
   <%= yield %>
 </div>
 
