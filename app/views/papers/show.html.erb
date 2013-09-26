@@ -59,3 +59,13 @@
 
 <%= link_to '編集', edit_paper_path(@paper) %> |
 <%= link_to '戻る', :back %>
+
+<div id="comments">
+  <% @comments.each do |comment| %>
+    <% if not comment.comment.nil? %>
+      <div style="background-color: #CCCCFF">
+        <%= Redcarpet.new(comment.comment).to_html.html_safe() %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

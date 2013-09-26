@@ -17,6 +17,7 @@ class PapersController < ApplicationController
   # GET /papers/1.json
   def show
     @paper = Paper.find(params[:id])
+    @comments = Mylist.find(:all, :conditions => {:title => @paper.title})
 
     respond_to do |format|
       format.html # show.html.erb
@@ -128,13 +129,14 @@ class PapersController < ApplicationController
   def add_comment
     @message = ""
     @mylist = Mylist.find(:first, :conditions => { :account => params[:account], :title => params[:title]})
-    @comment = Redcarpet.new(@mylist.comment).to_html.html_safe()
+    @comment = @mylist.comment
   end
 
   def post_comment
     @mylist = Mylist.find(:first, :conditions => { :account => params[:account], :title => params[:title]})
+#    @mylist.update_attribute(:comment, Redcarpet.new(params[:comment]).to_html.html_safe())
     @mylist.update_attribute(:comment, params[:comment])
-    @comment = Redcarpet.new(@mylist.comment).to_html.html_safe()
+    @comment = @mylist.comment
     @message = "登録は正常に行われました"
     render "add_comment"
   end

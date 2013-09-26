@@ -11,4 +11,8 @@
 <br><br>
 <%= link_to '戻る', :action => "mylist" %>
 
-<%= @comment %>
+<% if not @comment.nil? %>
+  <div style="background-color: #CCCCFF;">
+    <%= Redcarpet.new(@comment).to_html.html_safe() %>
+  </div>
+<% end %>

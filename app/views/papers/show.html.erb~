@@ -50,7 +50,7 @@
 <%= "author = {" + @paper.author + "}," %></br>
 <%= "title = {" + @paper.title + "}," %></br>
 <%= "booktitle = {" + @paper.publicationName + "}," %></br>
-<%= "year = {" + @paper.publicationYear + "}," %></br>
+<%= "year = {" + @paper.publicationYear.to_s + "}," %></br>
 }</br>
 </div>
 
@@ -59,3 +59,11 @@
 
 <%= link_to '編集', edit_paper_path(@paper) %> |
 <%= link_to '戻る', :back %>
+
+<div id="comments">
+  <% @comments.each do |comment| %>
+    <% if not comment.comment.nil? %>
+      <%= Redcarpet.new(comment.comment).to_html.html_safe() %>
+      <% end %>
+  <% end %>
+</div>
